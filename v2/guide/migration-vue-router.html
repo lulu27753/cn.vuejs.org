@@ -231,6 +231,7 @@
             
             
             
+            
         
         
         <li>
@@ -239,6 +240,7 @@
     
         
         
+            
             
             
             
@@ -261,6 +263,7 @@
             
             
             
+            
         
         
         <li>
@@ -269,6 +272,7 @@
     
         
         
+            
             
             
             
@@ -291,6 +295,7 @@
             
             
             
+            
         
         
         <li>
@@ -299,6 +304,7 @@
     
         
         
+            
             
             
             
@@ -321,6 +327,7 @@
             
             
             
+            
         
         
         <li>
@@ -329,6 +336,7 @@
     
         
         
+            
             
             
             
@@ -351,6 +359,7 @@
             
             
             
+            
         
         
         <li>
@@ -366,6 +375,7 @@
             
             
             
+            
         
         
         <li>
@@ -374,6 +384,7 @@
     
         
         
+            
             
             
             
@@ -398,6 +409,7 @@
             
             
             
+            
         
         
         <li>
@@ -406,6 +418,7 @@
     
         
         
+            
             
             
             
@@ -430,6 +443,7 @@
             
             
             
+            
         
         
         <li>
@@ -438,6 +452,7 @@
     
         
         
+            
             
             
             
@@ -460,14 +475,16 @@
             
             
             
+            
         
         
         <li>
-            <a href="/v2/guide/render-function.html" class="sidebar-link">Render 函数 & JSX</a>
+            <a href="/v2/guide/render-function.html" class="sidebar-link">渲染函数 & JSX</a>
         </li>
     
         
         
+            
             
             
             
@@ -483,6 +500,7 @@
     
         
         
+            
             
             
             
@@ -507,6 +525,7 @@
             
             
             
+            
         
         
         <li>
@@ -515,6 +534,7 @@
     
         
         
+            
             
             
             
@@ -537,6 +557,7 @@
             
             
             
+            
         
         
         <li>
@@ -545,6 +566,7 @@
     
         
         
+            
             
             
             
@@ -569,6 +591,7 @@
             
             
             
+            
         
         
         <li>
@@ -577,6 +600,7 @@
     
         
         
+            
             
             
             
@@ -599,6 +623,7 @@
             
             
             
+            
         
         
         <li>
@@ -607,6 +632,25 @@
     
         
         
+            
+            
+            
+            
+            
+            
+                <li><h3>内在</h3></li>
+            
+            
+            
+        
+        
+        <li>
+            <a href="/v2/guide/reactivity.html" class="sidebar-link">深入响应式原理</a>
+        </li>
+    
+        
+        
+            
             
             
             
@@ -631,6 +675,7 @@
             
             
             
+            
         
         
         <li>
@@ -646,6 +691,7 @@
             
             
             
+            
         
         
         <li>
@@ -654,6 +700,7 @@
     
         
         
+            
             
             
             
@@ -678,6 +725,7 @@
             
             
             
+            
         
         
         <li>
@@ -686,6 +734,7 @@
     
         
         
+            
             
             
             
@@ -753,7 +802,8 @@
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">迁移助手</a> 找到 <code>router.on</code> 被调用的示例。</p>
 </div>
 
-<h3 id="router-beforeEach-changed"><a href="#router-beforeEach-changed" class="headerlink" title="router.beforeEach changed"></a><code>router.beforeEach</code> <sup>changed</sup></h3><!-- todo translation --><code>router.beforeEach</code> now works asynchronously and takes a <code>next</code> function as its third argument.<br><br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function"><span class="keyword">function</span> (<span class="params">transition</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (transition.to.path === <span class="string">'/forbidden'</span>) &#123;</div><div class="line">    transition.abort()</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    transition.next()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="router-beforeEach-changed"><a href="#router-beforeEach-changed" class="headerlink" title="router.beforeEach changed"></a><code>router.beforeEach</code> <sup>changed</sup></h3><p><code>router.beforeEach</code> 现在是异步工作的，并且携带一个 <code>next</code> 函数作为其第三个参数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function"><span class="keyword">function</span> (<span class="params">transition</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (transition.to.path === <span class="string">'/forbidden'</span>) &#123;</div><div class="line">    transition.abort()</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    transition.next()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">router.beforeEach(<span class="function"><span class="keyword">function</span> (<span class="params">to, from, next</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (to.path === <span class="string">'/forbidden'</span>) &#123;</div><div class="line">    next(<span class="literal">false</span>)</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    next()</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
 <h3 id="subRoutes-换名"><a href="#subRoutes-换名" class="headerlink" title="subRoutes 换名"></a><code>subRoutes</code> <sup>换名</sup></h3><p>出于 Vue Router 和其他路由库一致性的考虑，重命名为<a href="http://router.vuejs.org/en/essentials/nested-routes.html" target="_blank" rel="external"><code>children</code></a></p>
 
@@ -826,7 +876,7 @@
 <div class="upgrade-path">
   <h4>升级路径</h4>
   <p>运行 <a href="https://github.com/vuejs/vue-migration-helper" target="_blank" rel="external">迁移助手</a> 找到 <code>v-link-active</code> 指令的示例</p>
-</div>  
+</div>
 
 <h2 id="编程导航"><a href="#编程导航" class="headerlink" title="编程导航"></a>编程导航</h2><h3 id="router-go-改变"><a href="#router-go-改变" class="headerlink" title="router.go 改变"></a><code>router.go</code> <sup>改变</sup></h3><p>为了与 <a href="https://developer.mozilla.org/en-US/docs/Web/API/History_API" target="_blank" rel="external">HTML5 History API</a> 保持一致性，<code>router.go</code> 已经被用来作为 <a href="https://router.vuejs.org/en/essentials/navigation.html#routergon" target="_blank" rel="external">后退/前进导航</a>，<a href="http://router.vuejs.org/en/essentials/navigation.html#routerpushlocation" target="_blank" rel="external"><code>router.push</code> </a> 用来导向特殊页面。</p>
 
@@ -938,11 +988,6 @@
 
 <h3 id="loadingRouteData-移除"><a href="#loadingRouteData-移除" class="headerlink" title="$loadingRouteData 移除"></a><code>$loadingRouteData</code> <sup>移除</sup></h3><p>定义你自己的属性（例如：<code>isLoading</code>），然后在路由上的 watcher 中更新加载状态。举个例子，如果使用<a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">axios</a>获取数据：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line">data: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">posts</span>: [],</div><div class="line">    <span class="attr">isLoading</span>: <span class="literal">false</span>,</div><div class="line">    <span class="attr">fetchError</span>: <span class="literal">null</span></div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"><span class="attr">watch</span>: &#123;</div><div class="line">  <span class="string">'$route'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></div><div class="line">    self.isLoading = <span class="literal">true</span></div><div class="line">    self.fetchData().then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">      self.isLoading = <span class="literal">false</span></div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;,</div><div class="line"><span class="attr">methods</span>: &#123;</div><div class="line">  <span class="attr">fetchData</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> self = <span class="keyword">this</span></div><div class="line">    <span class="keyword">return</span> axios.get(<span class="string">'/api/posts'</span>)</div><div class="line">      .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">        self.posts = response.data.posts</div><div class="line">      &#125;)</div><div class="line">      .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">        self.fetchError = error</div><div class="line">      &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<hr>
-<blockquote>
-<p>原文： <a href="http://vuejs.org/guide/migration-vue-router.html" target="_blank" rel="external">http://vuejs.org/guide/migration-vue-router.html</a></p>
-</blockquote>
-<hr>
 
     
       <div class="guide-links">
